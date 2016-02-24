@@ -1,0 +1,9 @@
+name = MS1TO1 Training
+description = MS1TO1 Training module provide a better UI for training and topic content types
+package = MS1TO1
+version = 7.x-1.0
+core = 7.x
+php = 5.3
+
+; contrib modules:
+dependencies[] = ctools

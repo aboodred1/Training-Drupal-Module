@@ -1,0 +1,282 @@
+body.training-modal  {
+  overflow-x: hidden;
+}
+
+div.ctools-training-content {
+  border: 0;
+}
+
+div.ctools-training-content .modal-header {
+  background-color: #5a5a5a;
+  position: relative;
+}
+
+div.ctools-training-content .modal-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  padding: 0;
+  line-height: 30px;
+  height: 30px;
+  
+}
+
+div.ctools-training-content .modal-header .close {
+  display: block;
+  background-image: url('../images/sprt-training-modal.png');
+  background-position: left -240px;
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+div.ctools-training-content .modal-header .close:hover {
+  background-position: -48px -240px;
+}
+
+div.ctools-training-content .modal-header .close span {
+  display: none;
+}
+
+div.ctools-training-content .modal-content {
+  padding: 0;
+}
+
+/* jp controls holder */
+
+.topic-wrapper {
+  height: 631px;
+  overflow: hidden;
+  position: relative;
+}
+
+.topic-wrapper .jp-controls-holder {
+  background-image: url('../images/bottom_bar_bg.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+  height: 31px;
+  overflow: hidden;
+  zoom: 1; /* ie */
+}
+
+.topic-wrapper .jp-controls li {
+  display: inline;
+  float: left;
+  background-image: none;
+  padding: 0;
+}
+
+.topic-wrapper .jp-control {
+  display: block;
+  height: 31px;
+  width: 40px; /* avg */
+  background-image: url('../images/sprt-training-modal.png');
+  background-repeat: no-repeat;
+  background-position: left top;  
+}
+
+.topic-wrapper .jp-control span {
+  display: none;
+}
+
+.topic-wrapper .jp-previous {
+  background-position: -48px top;
+}
+
+.topic-wrapper .jp-previous:hover {
+  background-position: -96px top;
+}
+
+.topic-wrapper .jp-play {
+  background-position: left -80px;
+}
+
+.topic-wrapper .jp-play:hover {
+  background-position: -48px -80px;
+}
+
+.topic-wrapper .jp-pause {
+  background-position: left -40px;
+}
+
+.topic-wrapper .jp-pause:hover {
+  background-position: -48px -40px;
+}
+
+.topic-wrapper .custom-jp-next {
+  background-position: -48px -120px;
+}
+
+.topic-wrapper .custom-jp-next-disable {
+  background-position: left -120px;
+}
+
+.topic-wrapper .custom-jp-next:hover {
+  background-position: -96px -120px;
+}
+
+.topic-wrapper .jp-stop {
+  background-position: -96px -40px;
+}
+
+.topic-wrapper .jp-stop:hover {
+  background-position: -144px -40px;
+}
+
+.topic-wrapper .jp-mute {
+  width: 42px;
+  background-position: left -160px;
+}
+
+.topic-wrapper .jp-mute:hover {
+  background-position: -48px -160px;
+}
+
+.topic-wrapper .jp-unmute {
+  width: 42px;
+  background-position: -96px -160px;
+}
+
+.topic-wrapper .jp-unmute:hover {
+  background-position: -144px -160px;
+}
+
+.topic-wrapper .jp-list {
+  width: 43px;
+  background-position: left -200px;
+}
+
+.topic-wrapper .jp-list-active,
+.topic-wrapper .jp-list:hover {
+  background-position: -48px -200px;
+}
+
+.topic-wrapper .jp-audio-bar {
+  width: 545px;
+  line-height: 31px;
+  color: #fff;
+  padding-left: 10px;
+}
+
+/* jp playlist */
+
+.topic-wrapper .jp-playlist {
+  position: absolute;
+  top: 631px;
+  right: 0;
+  z-index: 1;
+  width: 600px;
+  height: 400px;
+  background-color: #000;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity:0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  zoom: 1;
+}
+
+.topic-wrapper .jp-playlist-title {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #828282;
+  padding-bottom: 9px;
+  padding-top: 10px;
+  margin-bottom: 17px;
+  margin-left: 30px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.topic-wrapper .jp-playlist-close {
+  background-image: url('../images/sprt-training-modal.png');
+  background-repeat: no-repeat;
+  background-position: left -240px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  width: 13px;
+  height: 13px;
+}
+
+.topic-wrapper .jp-playlist-close:hover {
+  background-position: -48px -240px;
+}
+
+.topic-wrapper .jp-playlist-close span {
+  display: none;
+}
+
+.topic-wrapper .jp-playlist ul {
+  display: block;
+  height: 340px;
+  overflow: auto;
+  width: 580px;
+}
+
+.topic-wrapper .jp-playlist li {
+  background-image: none;
+  padding-left: 30px;
+}
+
+.topic-wrapper .jp-playlist li.jp-playlist-completed {
+  background-image: url('../images/sprt-training-modal.png');
+  background-repeat: no-repeat;
+  background-position: -90px -240px;
+}
+
+.topic-wrapper .jp-playlist li,
+.topic-wrapper .jp-playlist li a,
+.topic-wrapper .jp-playlist li a:visited {
+  color: #969696;
+}
+
+.topic-wrapper .jp-playlist li.jp-playlist-current,
+.topic-wrapper .jp-playlist li.jp-playlist-current a,
+.topic-wrapper .jp-playlist li.jp-playlist-current a:visited,
+.topic-wrapper .jp-playlist li.jp-playlist-completed a,
+.topic-wrapper .jp-playlist li.jp-playlist-completed a:visited {
+  color: #fff;
+}
+
+.topic-wrapper .jp-playlist li:hover,
+.topic-wrapper .jp-playlist li a:hover,
+.topic-wrapper .jp-playlist li.jp-playlist-current a:hover {
+  color: #e87d1e;
+}
+
+.topic-wrapper .jp-playlist li div {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.topic-wrapper .jp-list-duration {
+  float: right;
+  padding-right: 10px;
+}
+
+/* training complete message */
+
+.page-training .training-status {
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #A1A29F;
+  color: #e87d1e;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 10px 10%;
+  position: absolute;
+  top: auto;
+  /*bottom: -40px;*/
+  bottom: 0;
+  left: 0;
+  width: 80%;
+}

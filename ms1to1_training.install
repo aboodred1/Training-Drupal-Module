@@ -1,0 +1,123 @@
+<?php
+/**
+ * @file
+ * Define schema for MS1to1 training module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function ms1to1_training_schema() {
+  $schema = array();
+  
+  $schema['users_training_topics'] = array(
+    'description' => 'Table for storing information about user training topic progress',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => 'Primary Key: {node}.nid for node.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => 'Primary Key: {users}.uid for user.',
+      ),
+      'status' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Topic status: Indicator to check user progress, values used - completed, not completed',
+      ),
+    ),
+    'primary key' => array('nid', 'uid'),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+    'foreign keys' => array(
+      'node' => array(
+        'table' => 'node',
+        'columns' => array('nid' => 'nid'),
+      ),
+      'user' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+  );
+  
+  $schema['users_training_modules'] = array(
+    'description' => 'Table for storing information about user training module progress',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => 'Primary Key: {node}.nid for node.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => 'Primary Key: {users}.uid for user.',
+      ),
+      'status' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Topic status: Indicator to check user progress, values used - completed, not completed',
+      ),
+    ),
+    'primary key' => array('nid', 'uid'),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+    'foreign keys' => array(
+      'node' => array(
+        'table' => 'node',
+        'columns' => array('nid' => 'nid'),
+      ),
+      'user' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+  );
+  
+  return $schema;
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function ms1to1_training_uninstall() {
+  drupal_uninstall_schema('ms1to1_training');
+}
+
+
+/**
+ * Implementation of hook_requirements
+ */
+function ms1to1_training_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+  if ($phase == 'install') {
+    if (!file_exists('sites/all/libraries/mp3file/mp3file.inc')) {
+      $requirements['cloudfiles'] = array(
+        'title' => $t('MS1to1 Training mp3file'),
+        'value' => $t('Missing'),
+        'description' =>  $t('mp3file PHP library is missing'),
+        'severity' => REQUIREMENT_ERROR,
+      );
+    }
+  }
+  return $requirements;
+}
